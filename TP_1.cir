@@ -1,0 +1,24 @@
+* C:\Users\user\Desktop\2AGE2\TP_FONCTIONS_ELECTRONIQUES\TP_1.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Mon Dec 01 21:06:20 2025
+
+
+
+** Analysis setup **
+.ac DEC 101 10 100meg
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "C:\Users\user\Desktop\Pspice\Pspice\bibliopspice\s3el.LIB"
+.lib "nom.lib"
+
+.INC "TP_1.net"
+.INC "TP_1.als"
+
+
+.probe
+
+
+.END

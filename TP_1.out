@@ -1,0 +1,218 @@
+
+**** 12/01/25 21:14:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\user\Desktop\2AGE2\TP_FONCTIONS_ELECTRONIQUES\TP_1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Mon Dec 01 21:06:20 2025
+
+
+
+** Analysis setup **
+.ac DEC 101 10 100meg
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "C:\Users\user\Desktop\Pspice\Pspice\bibliopspice\s3el.LIB"
+.lib "nom.lib"
+
+.INC "TP_1.net"
+
+**** INCLUDING TP_1.net ****
+* Schematics Netlist *
+
+
+
+V_V1         Vee 0 -5
+V_V2         Vcc 0 5
+C_CE         0 $N_0001  100u  
+R_RE1         Vee $N_0001  220  
+C_C2         $N_0002 $N_0003  100u  
+R_RE2         Vee $N_0002  470  
+Q_Q2         Vcc $N_0004 $N_0002 BJT3904 
+Q_Q1         $N_0004 $N_0005 $N_0001 BJT3904 
+R_RC1         $N_0004 Vcc  470  
+C_C1         $N_0006 $N_0005  100u  
+R_R2         $N_0005 Vcc  2.2k  
+V_V4         $N_0007 0 DC 0 AC 1
++SIN 1.5 1mv 1k 0 0 0
+R_R1         Vee $N_0005  1k  
+R_Rs         $N_0007 $N_0006  1k  
+R_RL         0 $N_0003  5k  
+
+**** RESUMING TP_1.cir ****
+.INC "TP_1.als"
+
+
+
+**** INCLUDING TP_1.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=Vee -=0 )
+V_V2            V2(+=Vcc -=0 )
+C_CE            CE(1=0 2=$N_0001 )
+R_RE1           RE1(1=Vee 2=$N_0001 )
+C_C2            C2(1=$N_0002 2=$N_0003 )
+R_RE2           RE2(1=Vee 2=$N_0002 )
+Q_Q2            Q2(c=Vcc b=$N_0004 e=$N_0002 )
+Q_Q1            Q1(c=$N_0004 b=$N_0005 e=$N_0001 )
+R_RC1           RC1(1=$N_0004 2=Vcc )
+C_C1            C1(1=$N_0006 2=$N_0005 )
+R_R2            R2(1=$N_0005 2=Vcc )
+V_V4            V4(+=$N_0007 -=0 )
+R_R1            R1(1=Vee 2=$N_0005 )
+R_Rs            Rs(1=$N_0007 2=$N_0006 )
+R_RL            RL(1=0 2=$N_0003 )
+_    _(Vcc=Vcc)
+_    _(Vee=Vee)
+.ENDALIASES
+
+
+**** RESUMING TP_1.cir ****
+.probe
+
+
+.END
+
+**** 12/01/25 21:14:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\user\Desktop\2AGE2\TP_FONCTIONS_ELECTRONIQUES\TP_1.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               BJT3904         
+               NPN             
+          IS    2.367300E-15 
+          EG    1.1          
+          BF  280.922        
+          NF     .97302      
+         VAF  130.2085       
+         IKF     .23419      
+         ISE  307.070000E-18 
+          NE    1.19409      
+          BR   20            
+          NR     .97623      
+         VAR   11.07004      
+         IKR    7.80101      
+         ISC    3.522300E-12 
+          NC    1.33867      
+          RB   69.94226      
+         RBM     .01         
+         IRB  188.640000E-06 
+          RE     .2569       
+          RC     .03         
+         CJE    6.744100E-12 
+         VJE     .81795      
+         MJE     .36064      
+         CJC    3.424700E-12 
+         VJC     .4546       
+         MJC     .29228      
+        XCJC     .95425      
+         VJS     .5          
+          FC     .95         
+          TF  500.000000E-12 
+         XTF    1            
+         VTF    1            
+         ITF     .5          
+          TR    6.263600E-09 
+          CN    2.42         
+           D     .87         
+
+
+**** 12/01/25 21:14:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\user\Desktop\2AGE2\TP_FONCTIONS_ELECTRONIQUES\TP_1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  Vcc)    5.0000  (  Vee)   -5.0000  ($N_0001)   -2.6493                       
+
+($N_0002)    -.7529                   ($N_0003)    0.0000                       
+
+($N_0004)    -.0178                   ($N_0005)   -1.9084                       
+
+($N_0006)    0.0000                   ($N_0007)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         2.281E-02
+    V_V2        -2.281E-02
+    V_V4         0.000E+00
+
+    TOTAL POWER DISSIPATION   2.28E-01  WATTS
+
+
+**** 12/01/25 21:14:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\user\Desktop\2AGE2\TP_FONCTIONS_ELECTRONIQUES\TP_1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q2        Q_Q1      
+MODEL        BJT3904     BJT3904   
+IB           4.00E-05    4.87E-05 
+IC           9.00E-03    1.06E-02 
+VBE          7.35E-01    7.41E-01 
+VBC         -5.02E+00   -1.89E+00 
+VCE          5.75E+00    2.63E+00 
+BETADC       2.25E+02    2.19E+02 
+GM           3.43E-01    4.03E-01 
+RPI          6.46E+02    5.31E+02 
+RX           5.23E+01    5.03E+01 
+RO           1.41E+04    1.16E+04 
+CBE          1.87E-10    2.17E-10 
+CBC          1.58E-12    2.02E-12 
+CJS          0.00E+00    0.00E+00 
+BETAAC       2.22E+02    2.14E+02 
+CBX/CBX2     7.57E-14    9.70E-14 
+FT/FT2       2.90E+08    2.93E+08 
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+
